@@ -25,5 +25,10 @@ class DatabaseSeeder extends Seeder
 				'view_company_leads' => false,
 				'edit_users' => false,
 			]);
+			DB::table('forwarded_urls')->insert([
+				'url' => 'ashleyholloway.org'
+			],[
+				'url' => 'lead_lab.org'
+			]);
     }
 }
