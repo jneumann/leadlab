@@ -13,3 +13,6 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.js('resources/assets/js/landing_page.js', 'public/js')
+   .sass('resources/assets/sass/landing_page.scss', 'public/css');

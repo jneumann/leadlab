@@ -15,7 +15,7 @@ class CreateLeadsTable extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
-						$table->integer('owner');
+						$table->integer('owner')->nullable();
 						$table->string('first_name', 50)->nullable();
 						$table->string('last_name', 50)->nullable();
 						$table->string('email', 50)->nullable();
@@ -30,6 +30,7 @@ class CreateLeadsTable extends Migration
 						$table->float('income', 7, 2)->nullable();
 						$table->string('status')->nullable();
 						$table->text('notes')->nullable();
+						$table->text('credit_score')->nullable();
 						$table->timestamp('created');
 						$table->timestamp('updated')->nullable();
             $table->timestamps();

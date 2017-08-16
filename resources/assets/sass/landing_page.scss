@@ -1,0 +1,86 @@
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body,
+html {
+	min-height: 100%;
+}
+body {
+	background-image: url('https://images.unsplash.com/photo-1464146072230-91cabc968266?dpr=2&auto=format&q=50&cs=tinysrgb');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	background: none;
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: 800;
+}
+h1 {
+	text-shadow: .04em .04em .02em rgba(0, 0, 0, 0.75);
+}
+.jumbotron {
+	background: none;
+	h1 {
+		color: #eee;
+		font-size: 5.5em;
+	}
+	.content,
+	.calculator,
+	.offering,
+	form {
+		background-color: rgba(255,255,255,.9);
+		padding: 1em 1em .25em 1em;
+		margin-top: 1.5em;
+	}
+
+	form {
+		label {
+			font-size: 1.4em;
+		}
+	}
+
+	.offering {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			li {
+				text-align: center;
+				list-style-type: none;
+				flex-basis: 33%;
+				font-size: 1.5em;
+				margin-top: 1em;
+			}
+		}
+	}
+
+	.calculator {
+		h2 {
+			text-align: center;
+		}
+		.input {
+			text-align: center;
+		}
+		.total {
+			font-size: 2em;
+			text-align: center;
+			font-weight: 800;
+		}
+	}
+}
+
+@media (max-width: $screen-md) {
+	.content {
+		margin-bottom: 1.5em;
+		p:nth-child(n + 2) {
+			display: none;
+		}
+	}
+}

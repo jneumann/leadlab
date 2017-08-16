@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index');
 Route::get('/leads', 'LeadController@index');
 Route::get('/leads/new', 'LeadController@create');
 Route::post('/leads', 'LeadController@new_lead');
+
+Route::get('/landing_page', 'LandingPage@index');
+Route::post('/landign_page', 'LandingPage@index');

@@ -35,6 +35,10 @@
 							<label for="income">Income</label>
 							<input name="income" type="number" placeholder="100000" value="{{ $faker->numberBetween(10000, 100000) }}">
 						</div>
+						<div class="form-group col-md-4">
+							<label for="credit_score">Credit Score</label>
+							<input name="credit_score" id="credit_score"  placeholder="650" value="{{ $faker->numberBetween(350, 850) }}">
+						</div>
 						<hr class="col-md-12">
 						<div class="form-group col-md-12">
 							<label for="address1">Street Address</label>

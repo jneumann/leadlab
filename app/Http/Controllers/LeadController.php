@@ -36,8 +36,6 @@ class LeadController extends Controller
 		}
 
 		public function new_lead(Request $request) {
-			$data = $request->except('_token');
-
 			$lead = new Lead;
 
 			// TODO Add ability to actually assign owner to lead
@@ -54,6 +52,7 @@ class LeadController extends Controller
 			$lead->state = $request->state;
 			$lead->zip = $request->zip;
 			$lead->notes = $request->notes;
+			$lead->credit_score = $Request->credit_score;
 
 			$lead->save();
 
