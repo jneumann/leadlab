@@ -15,10 +15,12 @@ class LeadController extends Controller
     }
 
     public function index() {
-			$leads = DB::table('leads')->get();
+			$leads = DB::table('leads')
+				->select('first_name', 'last_name', 'phone1', 'email', 'status', 'income', 'credit_score', 'id')
+				->get();
 
 			return view('leads', [
-				'leads' => $leads
+				'leads' => $leads,
 			]);
     }
 
@@ -32,7 +34,39 @@ class LeadController extends Controller
 			]);
 		}
 
-		public function update() {
+		public function edit($id) {
+			$lead = DB::table('leads')
+				->where('id', $id)
+				->first();
+
+			return view('edit_lead', [
+				'user_id' => Auth::id(),
+				'id' => $id,
+				'lead' => $lead,
+			]);
+		}
+
+		public function update($id, Request $request) {
+			$lead = Lead::find($id);
+
+			$lead->owner = Auth::id();
+			$lead->first_name = $request->first_name;
+			$lead->last_name = $request->last_name;
+			$lead->email = $request->email;
+			$lead->phone1 = $request->phone1;
+			$lead->phone2 = $request->phone2;
+			$lead->income = $request->income;
+			$lead->address1 = $request->address1;
+			$lead->address2 = $request->address2;
+			$lead->city = $request->city;
+			$lead->state = $request->state;
+			$lead->zip = $request->zip;
+			$lead->notes = $request->notes;
+			$lead->credit_score = $request->credit_score;
+
+			$lead->save();
+
+			return $this->index();
 		}
 
 		public function new_lead(Request $request) {
@@ -52,7 +86,7 @@ class LeadController extends Controller
 			$lead->state = $request->state;
 			$lead->zip = $request->zip;
 			$lead->notes = $request->notes;
-			$lead->credit_score = $Request->credit_score;
+			$lead->credit_score = $request->credit_score;
 
 			$lead->save();
 

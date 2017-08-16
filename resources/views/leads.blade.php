@@ -22,7 +22,7 @@
 					</div>
 				</div>
 				<div class="panel-body">
-					<table class="table table-striped table-hover">
+					<table class="table table-striped table-hover lead_table">
 						<thead>
 							<tr>
 								<th>First Name</th>
@@ -31,25 +31,27 @@
 								<th>Email</th>
 								<th>Status</th>
 								<th>Income</th>
+								<th>Credit Score</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Jake</td>
-								<td>Neumann</td>
-								<td>(815) 867-5309</td>
-								<td>thejakeneumann@gmail.com</td>
-								<td>Called</td>
-								<td>$70,000</td>
+							@forelse ($leads as $lead)
+							<tr data-id="{{ $lead->id }}">
+								<td>{{ $lead->first_name }}</td>
+								<td>{{ $lead->last_name }}</td>
+								<td>{{ $lead->phone1 }}</td>
+								<td>{{ $lead->email }}</td>
+								<td>{{ $lead->status }}</td>
+								<td>{{ $lead->income }}</td>
+								<td>{{ $lead->credit_score }}</td>
 							</tr>
+							@empty
 							<tr>
-								<td>Aaron</td>
-								<td>Cantrall</td>
-								<td>(217) 555-5309</td>
-								<td>acantrall@gmail.com</td>
-								<td>Processing</td>
-								<td>$35,000</td>
+								<td colspan="6" style="text-align: center">
+									No leads yet, why don't you try adding some?
+								</td>
 							</tr>
+							@endforelse
 						</tbody>
 					</table>
 				</div>

@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+
+
 window.Vue = require('vue');
 
 /**
@@ -19,4 +21,10 @@ Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app'
+});
+
+$(document).ready(function () {
+	$('.lead_table tr').click(function () {
+		window.location.href = "/leads/" + $(this).data('id');
+	});
 });

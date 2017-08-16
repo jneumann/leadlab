@@ -33,6 +33,7 @@ class CreateLeadsTable extends Migration
 						$table->text('credit_score')->nullable();
 						$table->timestamp('created');
 						$table->timestamp('updated')->nullable();
+						$table->softDeletes()->nullable();
             $table->timestamps();
         });
     }

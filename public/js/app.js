@@ -791,6 +791,12 @@ var app = new Vue({
   el: '#app'
 });
 
+$(document).ready(function () {
+  $('.lead_table tr').click(function () {
+    window.location.href = "/leads/" + $(this).data('id');
+  });
+});
+
 /***/ }),
 /* 9 */,
 /* 10 */
