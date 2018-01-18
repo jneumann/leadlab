@@ -37,7 +37,6 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
 											<li><a href="/leads">Leads</a></li>
-											<li><a href="#">Users</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
