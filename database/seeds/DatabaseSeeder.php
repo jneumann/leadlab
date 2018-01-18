@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+			$faker = Factory::create();
+
 			DB::table('users')->insert([
 				'name' => 'Jake',
 				'email' => 'shinythebald@gmail.com',
@@ -25,10 +28,15 @@ class DatabaseSeeder extends Seeder
 				'view_company_leads' => false,
 				'edit_users' => false,
 			]);
-			DB::table('forwarded_urls')->insert([
-				'url' => 'ashleyholloway.org'
-			],[
-				'url' => 'lead_lab.org'
-			]);
+
+			for ($i = 0; $i < 10; $i++) {
+				DB::table('leads')->insert([
+					'first_name' => $faker->firstName,
+					'last_name' => $faker->lastName,
+					'email' => $faker->email,
+					'phone1' => $faker->phoneNumber,
+					'income' => $faker->numberBetween(20000, 1000000),
+				]);
+			}
     }
 }

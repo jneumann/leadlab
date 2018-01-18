@@ -27,7 +27,7 @@ class CreateLeadsTable extends Migration
 						$table->string('state')->nullable();
 						$table->string('zip')->nullable();
 						$table->string('source', 50)->nullable();
-						$table->float('income', 7, 2)->nullable();
+						$table->float('income', 9, 2)->nullable();
 						$table->string('status')->nullable();
 						$table->text('notes')->nullable();
 						$table->text('credit_score')->nullable();
