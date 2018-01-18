@@ -25,4 +25,4 @@ Route::post('/leads/{id}', 'LeadController@update');
 Route::post('/leads', 'LeadController@new_lead');
 
 Route::get('/landing_page', 'LandingPage@index');
-Route::post('/landign_page', 'LandingPage@index');
+Route::post('/landing_page', 'LandingPage@index');
