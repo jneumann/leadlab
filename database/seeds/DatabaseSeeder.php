@@ -1,5 +1,6 @@
 <?php
 
+use App\content;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
@@ -36,6 +37,23 @@ class DatabaseSeeder extends Seeder
 					'email' => $faker->email,
 					'phone1' => $faker->phoneNumber,
 					'income' => $faker->numberBetween(20000, 1000000),
+				]);
+			}
+
+			$content_model = new Content;
+			for ($i = 0; $i < 5; $i++) {
+				$content_model->save([
+					'title' => $faker->sentence(),
+					'content' => $faker->paragraph(),
+					'type' => 'Page',
+				]);
+			}
+
+			for ($i = 0; $i < 5; $i++) {
+				$content_model->save([
+					'title' => $faker->sentence(),
+					'content' => $faker->paragraph(),
+					'type' => 'Post',
 				]);
 			}
     }
