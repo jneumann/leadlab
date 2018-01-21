@@ -47,7 +47,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="6" style="text-align: center">
+								<td colspan="7" style="text-align: center">
 									No leads yet, why don't you try adding some?
 								</td>
 							</tr>
