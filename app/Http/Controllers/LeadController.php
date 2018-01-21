@@ -72,8 +72,7 @@ class LeadController extends Controller
 		public function new_lead(Request $request) {
 			$lead = new Lead;
 
-			// TODO Add ability to actually assign owner to lead
-			$lead->owner = Auth::id();
+			$lead->owner = $request->id || Auth::id();
 			$lead->first_name = $request->first_name;
 			$lead->last_name = $request->last_name;
 			$lead->email = $request->email;
