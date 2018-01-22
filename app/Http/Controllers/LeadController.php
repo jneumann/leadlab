@@ -92,6 +92,7 @@ class LeadController extends Controller
 			return $this->index();
 		}
 
+		// TODO Update leads
 		public function update_lead(Request $request) {
 		}
 }
