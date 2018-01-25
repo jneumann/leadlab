@@ -10,9 +10,9 @@
 				</div>
 				<div class="panel-body">
 					@if (!empty($content['id']))
-					<form method="POST" action="/contents/{{ $content['id'] }}">
+					<form method="POST" action="/admin/contents/{{ $content['id'] }}">
 					@else
-					<form method="POST" action="/contents">
+					<form method="POST" action="/admin/contents">
 					@endif
 						<input type="hidden" name="owner" value="{{ $user_id }}">
 						<div class="form-group col-md-12">
@@ -26,6 +26,7 @@
 							<select class="custom-select" id="post_type" name="post_type">
 								<option value="page">Page</option>
 								<option value="post">Post</option>
+								<option value="landing page">Landing Page</option>
 							</select>
 						</div>
 						{{ csrf_field() }}

@@ -9,7 +9,7 @@
 					Edit Lead
 				</div>
 				<div class="panel-body">
-					<form method="POST" action="/leads/{{ $id }}">
+					<form method="POST" action="/admin/leads/{{ $id }}">
 						<input type="hidden" name="owner" value="{{ $user_id }}">
 						<div class="form-group col-md-6">
 							<label for="first_name">First Name</label>
@@ -69,6 +69,9 @@
 						{{ csrf_field() }}
 						<div class="form-group col-md-2">
 							<button type="submit" class="btn btn-primary">Edit Lead</button>
+						</div>
+						<div class="form-group col-md-2">
+							<a href="/admin/leads/{{ $id }}/delete" class="btn btn-danger">Delete Lead</a>
 						</div>
 					</form>
 				</div>

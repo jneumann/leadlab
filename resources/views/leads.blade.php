@@ -18,7 +18,7 @@
 				<div class="panel-heading">
 					Leads
 					<div class="add_lead">
-						<a href="/leads/new"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Lead</a>
+						<a href="/admin/leads/new"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Lead</a>
 					</div>
 				</div>
 				<div class="panel-body">

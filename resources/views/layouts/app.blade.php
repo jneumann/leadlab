@@ -36,8 +36,8 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-											<li><a href="/leads">Leads</a></li>
-											<li><a href="/contents">Contents</a></li>
+											<li><a href="/admin/leads">Leads</a></li>
+											<li><a href="/admin/contents">Contents</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -7,8 +7,9 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<ul>
-						<li><a href="/contents?type=page">Pages</a></li>
-						<li><a href="/contents?type=post">Posts</a></li>
+						<li><a href="/admin/contents?type=page">Pages</a></li>
+						<li><a href="/admin/contents?type=post">Posts</a></li>
+						<li><a href="/admin/contents?type=landing+page">Landing Pages</a></li>
 					</ul>
 				</div>
 			</div>
@@ -22,7 +23,7 @@
 					Contents
 					@endif
 					<div class="add_content">
-						<a href="/contents/new"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Contents</a>
+						<a href="/admin/contents/new"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Contents</a>
 					</div>
 				</div>
 				<div class="panel-body">
