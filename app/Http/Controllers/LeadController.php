@@ -46,6 +46,14 @@ class LeadController extends Controller
 			]);
 		}
 
+		public function delete($id) {
+			$lead = DB::table('leads')
+				->where('id', $id)
+				->delete();
+
+			return redirect('admin/leads');
+		}
+
 		public function update($id, Request $request) {
 			$lead = Lead::find($id);
 
@@ -66,7 +74,7 @@ class LeadController extends Controller
 
 			$lead->save();
 
-			return $this->index();
+			return redirect('admin/leads');
 		}
 
 		public function new_lead(Request $request) {
@@ -89,10 +97,6 @@ class LeadController extends Controller
 
 			$lead->save();
 
-			return $this->index();
-		}
-
-		// TODO Update leads
-		public function update_lead(Request $request) {
+			return redirect('admin/leads');
 		}
 }
