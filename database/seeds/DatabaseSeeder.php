@@ -56,5 +56,11 @@ class DatabaseSeeder extends Seeder
 					'type' => 'Post',
 				]);
 			}
+
+			$content_model->save([
+				'title' => $faker->sentence(),
+				'content' => $faker->paragraph(),
+				'type' => 'Landing Page',
+			]);
     }
 }
