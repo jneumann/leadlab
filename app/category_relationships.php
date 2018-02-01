@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class category_relationships extends Model
 {
-	public function content() {
-		return $this->belongsToMany('App\content');
-	}
+	// public function content() {
+	// 	return $this->belongsToMany('App\content');
+	// }
 
 	public function save(array $options = [], $id = null) {
 		if (isset($options['id'])) {
