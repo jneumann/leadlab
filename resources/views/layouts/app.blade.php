@@ -38,6 +38,7 @@
                     <ul class="nav navbar-nav">
 											<li><a href="/admin/leads">Leads</a></li>
 											<li><a href="/admin/contents">Contents</a></li>
+											<li><a href="/admin/categories">Categories</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

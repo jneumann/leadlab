@@ -989,6 +989,10 @@ $(document).ready(function () {
   $('.content_table tr').click(function () {
     window.location.href = "/admin/contents/" + $(this).data('id');
   });
+
+  $('.category_table tr').click(function () {
+    window.location.href = "/admin/categories/" + $(this).data('id');
+  });
 });
 
 /***/ }),

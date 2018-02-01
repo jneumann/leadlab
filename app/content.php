@@ -4,9 +4,13 @@ namespace App;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class content extends Model
 {
+	use SoftDeletes;
+
+	protected $dates = ['deleted_at'];
 	// TODO look at mutators
 	// https://laravel.com/docs/5.5/eloquent-mutators
 
@@ -36,7 +40,7 @@ class content extends Model
 		}
 
 		if ($current_contents->isNotEmpty()) {
-			DB::table('contents')
+			return DB::table('contents')
 				->where('id', $options['id'])
 				->update([
 					'title' => $options['title'],
@@ -46,8 +50,8 @@ class content extends Model
 					'owner' => $options['owner'],
 				]);
 		} else {
-			DB::table('contents')
-				->insert([
+			return DB::table('contents')
+				->insertGetId([
 					'title' => $options['title'],
 					'handle' => $this->handleize($options['title']),
 					'content' => $options['content'],

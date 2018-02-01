@@ -4,6 +4,7 @@ use App\content;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
+// TODO Seperate seeds to separte files
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -61,6 +62,23 @@ class DatabaseSeeder extends Seeder
 				'title' => $faker->sentence(),
 				'content' => $faker->paragraph(),
 				'type' => 'Landing Page',
+			]);
+
+			DB::table('categories')->insert([
+				'title' => 'Finances',
+				'description' => '',
+			]);
+			DB::table('categories')->insert([
+				'title' => 'First Time Homebuyer',
+				'description' => '',
+			]);
+			DB::table('categories')->insert([
+				'title' => 'Credit Improvement',
+				'description' => '',
+			]);
+			DB::table('categories')->insert([
+				'title' => 'Retirement',
+				'description' => '',
 			]);
     }
 }

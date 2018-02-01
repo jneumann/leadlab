@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Content as ContentModel;
+use App\Categories;
 use DB;
 use Faker\Factory;
 use Illuminate\Http\Request;
@@ -36,37 +37,29 @@ class ContentsAdministration extends Contents
 
 		public function create() {
 			$faker = Factory::create();
+			$categories = Categories::get();
 
 			return view('contents/single', [
 				'user_id' => Auth::id(),
-				'content' => [
-					'title' => $faker->sentence(),
-					'content' => '<p>' . $faker->paragraph . '</p>',
-				],
+				'content' => [],
+				'categories' => $categories,
 			]);
 		}
 
 		public function edit($id) {
-			$contents = DB::table('contents')
-				->where('id', $id)
+			$content = ContentModel::where('id', $id)
 				->first();
+
+			$categories = Categories::get();
 
 			return view('contents/single', [
 				'user_id' => Auth::id(),
-				'content' => (array) $contents,
+				'content' => $content,
+				'categories' => $categories,
 			]);
 		}
 
 		public function update($id) {
-			$contents = ContentModel::find($id);
-
-			$contents->id = $this->req->id;
-			$contents->title = $this->req->title;
-			$contents->content = $this->req->contents;
-
-			$contents->save();
-
-			return $this->list();
 		}
 
 		public function new_content(Request $request) {
