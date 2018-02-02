@@ -9,7 +9,7 @@
 					New Lead
 				</div>
 				<div class="panel-body">
-					<form method="POST" action="/admin/leads">
+					<form method="POST" action="/admin/leads" class="row">
 						<input type="hidden" name="owner" value="{{ $user_id }}">
 						<div class="form-group col-md-6">
 							<label for="first_name">First Name</label>

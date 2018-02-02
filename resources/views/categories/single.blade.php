@@ -10,9 +10,9 @@
 				</div>
 				<div class="panel-body">
 					@if (!empty($category['id']))
-					<form method="POST" action="/admin/categories/{{ $category['id'] }}">
+					<form method="POST" action="/admin/categories/{{ $category['id'] }}" class="row">
 					@else
-					<form method="POST" action="/admin/categories">
+					<form method="POST" action="/admin/categories" class="row">
 					@endif
 						<div class="form-group col-md-12">
 							@if (isset($category['title']))

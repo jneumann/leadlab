@@ -10,9 +10,9 @@
 				</div>
 				<div class="panel-body">
 					@if (!empty($content['id']))
-					<form method="POST" action="/admin/contents/{{ $content['id'] }}">
+					<form method="POST" action="/admin/contents/{{ $content['id'] }}" class="row">
 					@else
-					<form method="POST" action="/admin/contents">
+					<form method="POST" action="/admin/contents" class="row">
 					@endif
 						<input type="hidden" name="owner" value="{{ $user_id }}">
 						<div class="form-group col-md-12">

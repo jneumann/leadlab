@@ -4,7 +4,8 @@
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 body,
 html {
@@ -76,7 +77,7 @@ h1 {
 	}
 }
 
-@media (max-width: $screen-md) {
+@include media-breakpoint-down(md) {
 	.content {
 		margin-bottom: 1.5em;
 		p:nth-child(n + 2) {
