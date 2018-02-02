@@ -3,10 +3,9 @@
 namespace App;
 
 use DB;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class content extends Model
+class content extends ModelHelper
 {
 	use SoftDeletes;
 
@@ -59,15 +58,5 @@ class content extends Model
 					'owner' => $options['owner'],
 				]);
 		}
-	}
-
-	// TODO Ensure handles are unique
-	private function handleize($title) {
-		$handle = strtolower($title);
-		$handle = preg_replace('/[^a-z0-9]/', '-', $handle);
-		$handle = preg_replace('/-$/', '', $handle);
-		$handle = preg_replace('/^-/', '', $handle);
-
-		return $handle;
 	}
 }
